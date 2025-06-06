@@ -405,7 +405,9 @@ const Index = () => {
             The screen time app that charges you when you break your limits.
           </p>
           <p className="text-gray-500 mt-12">
-            © 2025 ScreenFine. All rights reserved.
+            © 2025 ScreenFine. All rights reserved. <br></br>
+            ScreenFine™ is a trademark of Samuel Forrest.<br></br>
+            Concept and Branding protected under UK intellectual property law.
           </p>
         </div>
       </footer>
