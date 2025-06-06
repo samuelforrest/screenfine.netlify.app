@@ -156,7 +156,7 @@ const Index = () => {
                       <span className="text-2xl font-bold text-blue-400">20%</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-lg">App Development</span>
+                      <span className="text-lg">App Development & Other Fees</span>
                       <span className="text-2xl font-bold text-gray-400">60%</span>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ const Index = () => {
                 <h3 className="text-4xl font-bold mb-6">Uninstall Protection</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
                   24-hour app deletion protection prevents impulsive decisions. 
-                  Limits on changing screen time prevent you from sabotaging your progress.
+                  Locks on changing screen time limits prevent you from sabotaging your progress.
                 </p>
               </div>
             </div>
@@ -239,7 +239,7 @@ const Index = () => {
               <CardContent className="p-12">
                 <Users className="w-16 h-16 text-blue-400 mx-auto mb-8" />
                 <h3 className="text-2xl font-bold mb-4">Young Adults</h3>
-                <p className="text-gray-300 text-lg">University students and young professionals building healthy digital habits</p>
+                <p className="text-gray-300 text-lg">University students and young professionals building healthy digital habits early</p>
               </CardContent>
             </Card>
             
@@ -271,7 +271,7 @@ const Index = () => {
               <div className="text-8xl mb-8">🏆</div>
               <h3 className="text-3xl font-bold mb-6">Group Challenges</h3>
               <p className="text-xl text-gray-300 mb-8">
-                Create challenges with friends. First to break pays £0.99 to each participant.
+                Create challenges with friends. First to break pays the others.
                 Turn peer pressure into positive change.
               </p>
               <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-lg px-6 py-2">
@@ -293,15 +293,15 @@ const Index = () => {
             <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:200ms]">
               <CardContent className="p-10">
                 <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
-                  "Finally, a screen time app that actually works! The financial consequence made me think twice about mindless scrolling."
+                  "Addiction to screen time is hard to overcome, until now."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
                     SC
                   </div>
                   <div>
-                    <p className="font-bold">Sarah Chen</p>
-                    <p className="text-gray-400">Marketing Manager</p>
+                    <p className="font-bold">Sarah Colls</p>
+                    <p className="text-gray-400">Doctor</p>
                   </div>
                 </div>
               </CardContent>
@@ -327,14 +327,14 @@ const Index = () => {
             <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:600ms]">
               <CardContent className="p-10">
                 <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
-                  "The friend challenges feature is incredible. We turned reducing screen time into a competitive game!"
+                  "The idea is incredible - I need something to help force me to reduce my screen time"
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                    ER
+                    Es
                   </div>
                   <div>
-                    <p className="font-bold">Emma Rodriguez</p>
+                    <p className="font-bold">Emma Smith</p>
                     <p className="text-gray-400">University Student</p>
                   </div>
                 </div>
@@ -375,7 +375,7 @@ const Index = () => {
           </form>
           
           <p className="text-gray-400 mt-8 opacity-0 animate-fade-in [animation-delay:600ms]">
-            No spam. We'll only email you when ScreenFine launches.
+            No spam. We'll only email you at significant ScreenFine moments.
           </p>
         </div>
       </section>
