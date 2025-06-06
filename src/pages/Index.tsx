@@ -87,7 +87,7 @@ const Index = () => {
             <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
               <div className="text-6xl mb-6">🗑️</div>
               <h3 className="text-2xl font-bold mb-4">Easy to Delete</h3>
-              <p className="text-gray-400 text-lg">Remove when it becomes inconvenient</p>
+              <p className="text-gray-400 text-lg">Just remove their apps when it becomes inconvenient</p>
             </div>
           </div>
           
@@ -187,7 +187,7 @@ const Index = () => {
                   <div className="space-y-6">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-yellow-400 mb-2">1 minute</div>
-                      <div className="text-gray-300">Per app extension</div>
+                      <div className="text-gray-300">Per app</div>
                     </div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-orange-400 mb-2">15 minutes</div>
