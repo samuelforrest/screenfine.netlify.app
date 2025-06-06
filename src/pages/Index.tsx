@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -292,7 +291,7 @@ const Index = () => {
                 Create challenges with friends. First to break pays the others.
                 Turn peer pressure into positive change.
               </p>
-              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-lg px-6 py-2">
+              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-lg px-6 py-2 transition-transform duration-200 hover:scale-110">
                 Coming Soon
               </Badge>
             </CardContent>
