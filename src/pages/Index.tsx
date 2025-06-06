@@ -22,6 +22,13 @@ const Index = () => {
     }
   };
 
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById('waitlist-section');
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
@@ -33,7 +40,7 @@ const Index = () => {
             </Badge>
           </div>
           
-          <h1 className="text-7xl md:text-9xl font-black mb-8 opacity-0 animate-fade-in [animation-delay:200ms]">
+          <h1 className="text-7xl md:text-9xl font-black mb-8 opacity-0 animate-fade-in [animation-delay:200ms] bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             ScreenFine
           </h1>
           
@@ -43,6 +50,7 @@ const Index = () => {
           
           <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
             <Button 
+              onClick={scrollToWaitlist}
               size="lg" 
               className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105"
             >
@@ -337,7 +345,7 @@ const Index = () => {
       </section>
 
       {/* Waitlist */}
-      <section className="py-32 px-6">
+      <section id="waitlist-section" className="py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 opacity-0 animate-fade-in">
             Join the Waitlist
@@ -379,13 +387,8 @@ const Index = () => {
           <p className="text-gray-400 mb-8 text-lg">
             The screen time app that charges you when you break your limits.
           </p>
-          <div className="flex justify-center gap-12 text-gray-400 text-lg">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Contact</a>
-          </div>
           <p className="text-gray-500 mt-12">
-            © 2024 ScreenFine. All rights reserved.
+            © 2025 ScreenFine. All rights reserved.
           </p>
         </div>
       </footer>
