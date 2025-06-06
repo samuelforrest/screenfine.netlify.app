@@ -53,7 +53,7 @@ const Index = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="opacity-0 animate-fade-in">
             <Badge className="mb-8 bg-white/10 text-white border-white/20 text-lg px-6 py-2">
-              Revolutionary Screen Time Control
+              Screen Time Has Been Reinvented
             </Badge>
           </div>
           
@@ -71,7 +71,7 @@ const Index = () => {
               size="lg" 
               className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105"
             >
-              Join Waitlist
+              Secure Your Spot 🚀
             </Button>
           </div>
         </div>
