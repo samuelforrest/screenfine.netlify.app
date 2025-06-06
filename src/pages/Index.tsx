@@ -16,7 +16,7 @@ const Index = () => {
     if (email) {
       toast({
         title: "You're on the waitlist!",
-        description: "We'll notify you when ScreenFine launches.",
+        description: "We'll notify you when ScreenFine launches!",
       });
       setEmail('');
     }
