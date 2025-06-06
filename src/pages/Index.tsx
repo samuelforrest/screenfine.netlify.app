@@ -45,7 +45,7 @@ const Index = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl text-gray-300 mb-12 opacity-0 animate-fade-in [animation-delay:400ms] leading-relaxed">
-            The first screen time app that charges you real money when you break your limits
+            The first screen time app that charges you <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">real money</span> when you break your limits
           </p>
           
           <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
@@ -108,7 +108,7 @@ const Index = () => {
           </h3>
           
           <p className="text-2xl text-gray-300 mb-20 max-w-4xl mx-auto opacity-0 animate-fade-in [animation-delay:400ms]">
-            Real financial consequences create real behavioral change. 
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">Real financial consequences</span> create real behavioral change. 
             When breaking your limit costs £0.99, you'll think twice about that TikTok binge.
           </p>
         </div>
