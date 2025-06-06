@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -28,6 +28,24 @@ const Index = () => {
       waitlistSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -67,31 +85,31 @@ const Index = () => {
       {/* Problem Statement */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-16 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-7xl font-bold mb-16 scroll-animate">
             Traditional apps don't work
           </h2>
           
           <div className="grid md:grid-cols-3 gap-12 mb-20">
-            <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+            <div className="scroll-animate">
               <div className="text-6xl mb-6">⚠️</div>
               <h3 className="text-2xl font-bold mb-4">Easy to Dismiss</h3>
               <p className="text-gray-400 text-lg">Just tap "Ignore Limit" and continue scrolling</p>
             </div>
             
-            <div className="opacity-0 animate-fade-in [animation-delay:400ms]">
+            <div className="scroll-animate">
               <div className="text-6xl mb-6">🔄</div>
               <h3 className="text-2xl font-bold mb-4">No Consequences</h3>
               <p className="text-gray-400 text-lg">Breaking limits has zero real impact</p>
             </div>
             
-            <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
+            <div className="scroll-animate">
               <div className="text-6xl mb-6">🗑️</div>
               <h3 className="text-2xl font-bold mb-4">Easy to Delete</h3>
               <p className="text-gray-400 text-lg">Just remove their apps when it becomes inconvenient</p>
             </div>
           </div>
           
-          <p className="text-3xl text-white font-semibold opacity-0 animate-fade-in [animation-delay:800ms]">
+          <p className="text-3xl text-white font-semibold scroll-animate">
             Until now.
           </p>
         </div>
@@ -100,14 +118,14 @@ const Index = () => {
       {/* Solution */}
       <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 scroll-animate">
             We hit where it hurts:
           </h2>
-          <h3 className="text-6xl md:text-8xl font-black text-green-400 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+          <h3 className="text-6xl md:text-8xl font-black text-green-400 mb-16 scroll-animate">
             Your wallet
           </h3>
           
-          <p className="text-2xl text-gray-300 mb-20 max-w-4xl mx-auto opacity-0 animate-fade-in [animation-delay:400ms]">
+          <p className="text-2xl text-gray-300 mb-20 max-w-4xl mx-auto scroll-animate">
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">Real financial consequences</span> create real behavioral change. 
             When breaking your limit costs £0.99, you'll think twice about that TikTok binge.
           </p>
@@ -117,22 +135,22 @@ const Index = () => {
       {/* Features */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 scroll-animate">
             How ScreenFine Works
           </h2>
           
           <div className="space-y-32">
             {/* Financial Accountability */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="opacity-0 animate-fade-in">
+              <div className="scroll-animate">
                 <Target className="w-16 h-16 text-red-400 mb-8" />
                 <h3 className="text-4xl font-bold mb-6">Financial Accountability</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  £0.99 charge when you break your limits. Real money, real consequences, real change.
+                  £0.99 charge when you break your limits. <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">Real money</span>, real consequences, real change.
                   No more empty warnings you can dismiss.
                 </p>
               </div>
-              <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+              <div className="scroll-animate">
                 <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 p-8 rounded-3xl border border-red-500/30">
                   <div className="text-center">
                     <div className="text-5xl font-black text-red-400 mb-4">£0.99</div>
@@ -144,7 +162,7 @@ const Index = () => {
 
             {/* Charity & Rewards */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1 opacity-0 animate-fade-in">
+              <div className="order-2 md:order-1 scroll-animate">
                 <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 p-8 rounded-3xl border border-green-500/30">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
@@ -162,7 +180,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="order-1 md:order-2 opacity-0 animate-fade-in [animation-delay:200ms]">
+              <div className="order-1 md:order-2 scroll-animate">
                 <Heart className="w-16 h-16 text-green-400 mb-8" />
                 <h3 className="text-4xl font-bold mb-6">Your Money Makes Impact</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
@@ -174,7 +192,7 @@ const Index = () => {
 
             {/* Emergency Access */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="opacity-0 animate-fade-in">
+              <div className="scroll-animate">
                 <Clock className="w-16 h-16 text-yellow-400 mb-8" />
                 <h3 className="text-4xl font-bold mb-6">Emergency Access</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
@@ -182,7 +200,7 @@ const Index = () => {
                   True emergency? Claim 15 minutes once daily. We're strict, not cruel.
                 </p>
               </div>
-              <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+              <div className="scroll-animate">
                 <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 p-8 rounded-3xl border border-yellow-500/30">
                   <div className="space-y-6">
                     <div className="text-center">
@@ -200,7 +218,7 @@ const Index = () => {
 
             {/* Protection */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1 opacity-0 animate-fade-in">
+              <div className="order-2 md:order-1 scroll-animate">
                 <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-8 rounded-3xl border border-purple-500/30">
                   <div className="text-center space-y-4">
                     <Shield className="w-12 h-12 text-purple-400 mx-auto" />
@@ -209,7 +227,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="order-1 md:order-2 opacity-0 animate-fade-in [animation-delay:200ms]">
+              <div className="order-1 md:order-2 scroll-animate">
                 <Lock className="w-16 h-16 text-purple-400 mb-8" />
                 <h3 className="text-4xl font-bold mb-6">Uninstall Protection</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
@@ -225,17 +243,17 @@ const Index = () => {
       {/* Target Audience */}
       <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-16 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 scroll-animate">
             Built for Independent Adults
           </h2>
           
-          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+          <p className="text-2xl text-gray-300 mb-16 scroll-animate">
             When you're an adult, no one's monitoring your screen time. 
             You need accountability that works when family can't help anymore.
           </p>
           
           <div className="grid md:grid-cols-2 gap-12">
-            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:400ms]">
+            <Card className="bg-white/5 border-white/10 scroll-animate">
               <CardContent className="p-12">
                 <Users className="w-16 h-16 text-blue-400 mx-auto mb-8" />
                 <h3 className="text-2xl font-bold mb-4">Young Adults</h3>
@@ -243,7 +261,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:600ms]">
+            <Card className="bg-white/5 border-white/10 scroll-animate">
               <CardContent className="p-12">
                 <Target className="w-16 h-16 text-green-400 mx-auto mb-8" />
                 <h3 className="text-2xl font-bold mb-4">Professionals</h3>
@@ -257,16 +275,16 @@ const Index = () => {
       {/* Friend Challenges */}
       <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-16 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 scroll-animate">
             Challenge Your Friends
           </h2>
           
-          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+          <p className="text-2xl text-gray-300 mb-16 scroll-animate">
             Turn reducing screen time into a competitive game. 
             Whoever breaks their limits first pays everyone else.
           </p>
           
-          <Card className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-purple-500/30 opacity-0 animate-fade-in [animation-delay:400ms]">
+          <Card className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-purple-500/30 scroll-animate">
             <CardContent className="p-16">
               <div className="text-8xl mb-8">🏆</div>
               <h3 className="text-3xl font-bold mb-6">Group Challenges</h3>
@@ -285,12 +303,12 @@ const Index = () => {
       {/* Testimonials */}
       <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 scroll-animate">
             What Early Users Say
           </h2>
           
           <div className="grid md:grid-cols-3 gap-12">
-            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:200ms]">
+            <Card className="bg-white/5 border-white/10 scroll-animate">
               <CardContent className="p-10">
                 <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
                   "Addiction to screen time is hard to overcome, until now."
@@ -307,7 +325,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:400ms]">
+            <Card className="bg-white/5 border-white/10 scroll-animate">
               <CardContent className="p-10">
                 <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
                   "As someone who builds apps, I know how addictive they can be. ScreenFine's approach is genius - it hits where it hurts most."
@@ -324,7 +342,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:600ms]">
+            <Card className="bg-white/5 border-white/10 scroll-animate">
               <CardContent className="p-10">
                 <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
                   "The idea is incredible - I need something to help force me to reduce my screen time"
@@ -347,15 +365,15 @@ const Index = () => {
       {/* Waitlist */}
       <section id="waitlist-section" className="py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 opacity-0 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 scroll-animate">
             Join the Waitlist
           </h2>
           
-          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+          <p className="text-2xl text-gray-300 mb-16 scroll-animate">
             Be among the first to experience the screen time app that actually works.
           </p>
           
-          <form onSubmit={handleWaitlistSignup} className="max-w-md mx-auto opacity-0 animate-fade-in [animation-delay:400ms]">
+          <form onSubmit={handleWaitlistSignup} className="max-w-md mx-auto scroll-animate">
             <div className="flex gap-4">
               <Input
                 type="email"
@@ -374,7 +392,7 @@ const Index = () => {
             </div>
           </form>
           
-          <p className="text-gray-400 mt-8 opacity-0 animate-fade-in [animation-delay:600ms]">
+          <p className="text-gray-400 mt-8 scroll-animate">
             No spam. We'll only email you at significant ScreenFine moments.
           </p>
         </div>
@@ -382,7 +400,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-16 px-6 border-t border-white/10">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center scroll-animate">
           <h3 className="text-3xl font-bold mb-4">ScreenFine</h3>
           <p className="text-gray-400 mb-8 text-lg">
             The screen time app that charges you when you break your limits.
