@@ -184,7 +184,7 @@ const Index = () => {
                 <Heart className="w-16 h-16 text-green-400 mb-8" />
                 <h3 className="text-4xl font-bold mb-6">Your Money Makes Impact</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  20% goes to your chosen charity. 20% goes to rewards for users maintaining streaks.
+                  20% goes to your chosen charity. 20% goes to <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">rewards</span> for users maintaining streaks.
                   Turn your struggles into social good and community rewards.
                 </p>
               </div>
@@ -232,7 +232,7 @@ const Index = () => {
                 <h3 className="text-4xl font-bold mb-6">Uninstall Protection</h3>
                 <p className="text-xl text-gray-300 leading-relaxed">
                   24-hour app deletion protection prevents impulsive decisions. 
-                  Locks on changing screen time limits prevent you from sabotaging your progress.
+                  Locks on changing screen time limits prevent you from <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">sabotaging</span> your progress.
                 </p>
               </div>
             </div>
@@ -257,7 +257,7 @@ const Index = () => {
               <CardContent className="p-12">
                 <Users className="w-16 h-16 text-blue-400 mx-auto mb-8" />
                 <h3 className="text-2xl font-bold mb-4">Young Adults</h3>
-                <p className="text-gray-300 text-lg">University students and young professionals building healthy digital habits early</p>
+                <p className="text-gray-300 text-lg">Students and young professionals building healthy digital habits early</p>
               </CardContent>
             </Card>
             
