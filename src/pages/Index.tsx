@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import { CheckCircle, Shield, Target, Users, Heart, Zap, Clock, Lock } from 'lucide-react';
+import { CheckCircle, Shield, Target, Users, Heart, Zap, Clock, Lock, ArrowDown } from 'lucide-react';
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -22,306 +22,251 @@ const Index = () => {
     }
   };
 
-  const features = [
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Financial Accountability",
-      description: "£0.99 charge when you break your limits - real consequences for real change"
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Charity Impact",
-      description: "20% of fees go to your chosen charity - turn your struggles into social good"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Reward Pool",
-      description: "20% goes to rewards for users maintaining streaks - get paid for staying focused"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Emergency Access",
-      description: "1-minute extensions and 15-minute daily emergency access when you need it"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Uninstall Protection",
-      description: "24-hour app deletion protection prevents impulsive decisions"
-    },
-    {
-      icon: <Lock className="w-8 h-8" />,
-      title: "Always Allowed",
-      description: "Essential apps like Maps, Phone, and Find My always accessible"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "Marketing Manager",
-      content: "Finally, a screen time app that actually works! The financial consequence made me think twice about mindless scrolling. I've saved hours and helped charity.",
-      avatar: "SC"
-    },
-    {
-      name: "Marcus Johnson",
-      role: "Software Developer",
-      content: "As someone who builds apps, I know how addictive they can be. ScreenFine's approach is genius - it hits where it hurts most, your wallet.",
-      avatar: "MJ"
-    },
-    {
-      name: "Emma Rodriguez",
-      role: "University Student",
-      content: "The friend challenges feature is incredible. We turned reducing screen time into a competitive game, and the loser pays everyone else!",
-      avatar: "ER"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-green-900/20" />
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <Badge className="mb-6 bg-blue-600/20 text-blue-300 border-blue-600/30 animate-fade-in">
-            Revolutionary Screen Time Control
-          </Badge>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-white to-green-400 bg-clip-text text-transparent animate-fade-in">
-            ScreenFine
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in">
-            The first screen time app that charges you real money when you break your limits. 
-            Turn your phone addiction into charity donations and rewards.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
-              Join Waitlist
-            </Button>
-            <Button variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg">
-              See Demo
-            </Button>
-          </div>
-        </div>
-        
-        {/* Floating iPhone Mockups */}
-        <div className="absolute right-10 top-1/2 transform -translate-y-1/2 hidden xl:block animate-fade-in">
-          <div className="relative">
-            <div className="w-72 h-[580px] bg-black rounded-[3rem] p-2 shadow-2xl border border-gray-800">
-              <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
-                <img 
-                  src="/lovable-uploads/0327a512-7560-4249-b3ef-e0f53de3f83f.png" 
-                  alt="ScreenFine App Blocks Interface" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="absolute left-10 top-1/2 transform -translate-y-1/2 translate-y-20 hidden xl:block animate-fade-in">
-          <div className="relative">
-            <div className="w-72 h-[580px] bg-black rounded-[3rem] p-2 shadow-2xl border border-gray-800">
-              <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
-                <img 
-                  src="/lovable-uploads/0580812b-3df7-4468-9cd4-3177ab5b439f.png" 
-                  alt="ScreenFine App Stats Interface" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-            Traditional screen time apps don't work
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
-            You're an adult. No one's going to take your phone away. You can dismiss any notification, 
-            override any limit, and delete any app. <span className="text-blue-400 font-semibold">Until now.</span>
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-gray-900/50 border-gray-700">
-              <CardContent className="p-8 text-center">
-                <div className="text-red-400 text-4xl mb-4">⚠️</div>
-                <h3 className="text-xl font-semibold text-white mb-3">Easy to Dismiss</h3>
-                <p className="text-gray-400">Just tap "Ignore Limit" and continue scrolling endlessly</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-900/50 border-gray-700">
-              <CardContent className="p-8 text-center">
-                <div className="text-red-400 text-4xl mb-4">🔄</div>
-                <h3 className="text-xl font-semibold text-white mb-3">No Consequences</h3>
-                <p className="text-gray-400">Breaking limits has zero impact on your life</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-900/50 border-gray-700">
-              <CardContent className="p-8 text-center">
-                <div className="text-red-400 text-4xl mb-4">🗑️</div>
-                <h3 className="text-xl font-semibold text-white mb-3">Easy to Delete</h3>
-                <p className="text-gray-400">Remove the app whenever it becomes inconvenient</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Solution Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/10 to-green-900/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-              ScreenFine hits where it hurts: <span className="text-green-400">Your wallet</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Real financial consequences create real behavioral change. When breaking your limit costs £0.99, 
-              you'll think twice about that TikTok binge.
-            </p>
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="opacity-0 animate-fade-in">
+            <Badge className="mb-8 bg-white/10 text-white border-white/20 text-lg px-6 py-2">
+              Revolutionary Screen Time Control
+            </Badge>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-gray-900/50 border-gray-700 hover:bg-gray-800/50 transition-all duration-300 hover:scale-105">
-                <CardContent className="p-8">
-                  <div className="text-blue-400 mb-4">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <h1 className="text-7xl md:text-9xl font-black mb-8 opacity-0 animate-fade-in [animation-delay:200ms]">
+            ScreenFine
+          </h1>
+          
+          <p className="text-2xl md:text-3xl text-gray-300 mb-12 opacity-0 animate-fade-in [animation-delay:400ms] leading-relaxed">
+            The first screen time app that charges you real money when you break your limits
+          </p>
+          
+          <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
+            <Button 
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            >
+              Join Waitlist
+            </Button>
           </div>
+        </div>
+        
+        <div className="absolute bottom-10 opacity-0 animate-fade-in [animation-delay:800ms]">
+          <ArrowDown className="w-8 h-8 text-gray-400 animate-bounce" />
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 px-4">
+      {/* Problem Statement */}
+      <section className="py-32 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-bold mb-16 opacity-0 animate-fade-in">
+            Traditional apps don't work
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-12 mb-20">
+            <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+              <div className="text-6xl mb-6">⚠️</div>
+              <h3 className="text-2xl font-bold mb-4">Easy to Dismiss</h3>
+              <p className="text-gray-400 text-lg">Just tap "Ignore Limit" and continue scrolling</p>
+            </div>
+            
+            <div className="opacity-0 animate-fade-in [animation-delay:400ms]">
+              <div className="text-6xl mb-6">🔄</div>
+              <h3 className="text-2xl font-bold mb-4">No Consequences</h3>
+              <p className="text-gray-400 text-lg">Breaking limits has zero real impact</p>
+            </div>
+            
+            <div className="opacity-0 animate-fade-in [animation-delay:600ms]">
+              <div className="text-6xl mb-6">🗑️</div>
+              <h3 className="text-2xl font-bold mb-4">Easy to Delete</h3>
+              <p className="text-gray-400 text-lg">Remove when it becomes inconvenient</p>
+            </div>
+          </div>
+          
+          <p className="text-3xl text-white font-semibold opacity-0 animate-fade-in [animation-delay:800ms]">
+            Until now.
+          </p>
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 opacity-0 animate-fade-in">
+            We hit where it hurts:
+          </h2>
+          <h3 className="text-6xl md:text-8xl font-black text-green-400 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+            Your wallet
+          </h3>
+          
+          <p className="text-2xl text-gray-300 mb-20 max-w-4xl mx-auto opacity-0 animate-fade-in [animation-delay:400ms]">
+            Real financial consequences create real behavioral change. 
+            When breaking your limit costs £0.99, you'll think twice about that TikTok binge.
+          </p>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 opacity-0 animate-fade-in">
             How ScreenFine Works
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Set Your Limits</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">Choose daily time limits for each app</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">Essential apps stay in "Always Allowed" category</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">24-hour protection prevents impulsive limit changes</p>
+          <div className="space-y-32">
+            {/* Financial Accountability */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="opacity-0 animate-fade-in">
+                <Target className="w-16 h-16 text-red-400 mb-8" />
+                <h3 className="text-4xl font-bold mb-6">Financial Accountability</h3>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  £0.99 charge when you break your limits. Real money, real consequences, real change.
+                  No more empty warnings you can dismiss.
+                </p>
+              </div>
+              <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+                <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 p-8 rounded-3xl border border-red-500/30">
+                  <div className="text-center">
+                    <div className="text-5xl font-black text-red-400 mb-4">£0.99</div>
+                    <div className="text-xl text-gray-300">Per limit break</div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="w-64 h-[520px] bg-black rounded-[2.5rem] p-2 shadow-2xl border border-gray-700">
-                <div className="w-full h-full bg-black rounded-[2rem] overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/0327a512-7560-4249-b3ef-e0f53de3f83f.png" 
-                    alt="ScreenFine Blocks Interface" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 flex justify-center">
-              <div className="w-64 h-[520px] bg-black rounded-[2.5rem] p-2 shadow-2xl border border-gray-700">
-                <div className="w-full h-full bg-black rounded-[2rem] overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/0580812b-3df7-4468-9cd4-3177ab5b439f.png" 
-                    alt="ScreenFine Stats Interface" 
-                    className="w-full h-full object-cover"
-                  />
+            {/* Charity & Rewards */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="order-2 md:order-1 opacity-0 animate-fade-in">
+                <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 p-8 rounded-3xl border border-green-500/30">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg">To Charity</span>
+                      <span className="text-2xl font-bold text-green-400">20%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg">To Reward Pool</span>
+                      <span className="text-2xl font-bold text-blue-400">20%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg">App Development</span>
+                      <span className="text-2xl font-bold text-gray-400">60%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 md:order-2 opacity-0 animate-fade-in [animation-delay:200ms]">
+                <Heart className="w-16 h-16 text-green-400 mb-8" />
+                <h3 className="text-4xl font-bold mb-6">Your Money Makes Impact</h3>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  20% goes to your chosen charity. 20% goes to rewards for users maintaining streaks.
+                  Turn your struggles into social good and community rewards.
+                </p>
+              </div>
+            </div>
+
+            {/* Emergency Access */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="opacity-0 animate-fade-in">
+                <Clock className="w-16 h-16 text-yellow-400 mb-8" />
+                <h3 className="text-4xl font-bold mb-6">Emergency Access</h3>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Need Maps for navigation? Get 1 extra minute per app. 
+                  True emergency? Claim 15 minutes once daily. We're strict, not cruel.
+                </p>
+              </div>
+              <div className="opacity-0 animate-fade-in [animation-delay:200ms]">
+                <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 p-8 rounded-3xl border border-yellow-500/30">
+                  <div className="space-y-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-yellow-400 mb-2">1 minute</div>
+                      <div className="text-gray-300">Per app extension</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-orange-400 mb-2">15 minutes</div>
+                      <div className="text-gray-300">Daily emergency access</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="order-1 md:order-2">
-              <h3 className="text-2xl font-bold text-white mb-6">Pay When You Break</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">£0.99 charge unlocks all apps for the rest of the day</p>
+
+            {/* Protection */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="order-2 md:order-1 opacity-0 animate-fade-in">
+                <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-8 rounded-3xl border border-purple-500/30">
+                  <div className="text-center space-y-4">
+                    <Shield className="w-12 h-12 text-purple-400 mx-auto" />
+                    <div className="text-2xl font-bold text-purple-400">24 Hour Protection</div>
+                    <div className="text-gray-300">Against impulsive decisions</div>
+                  </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">20% goes to your chosen charity</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">20% goes to reward pool for streak maintainers</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">Emergency access: 1min per app + 15min daily emergency</p>
-                </div>
+              </div>
+              <div className="order-1 md:order-2 opacity-0 animate-fade-in [animation-delay:200ms]">
+                <Lock className="w-16 h-16 text-purple-400 mb-8" />
+                <h3 className="text-4xl font-bold mb-6">Uninstall Protection</h3>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  24-hour app deletion protection prevents impulsive decisions. 
+                  Limits on changing screen time prevent you from sabotaging your progress.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Target Audience Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-green-900/10 to-blue-900/10">
+      {/* Target Audience */}
+      <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 opacity-0 animate-fade-in">
             Built for Independent Adults
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
-            When you're an adult, no one's going to monitor your screen time or take your phone away. 
+          
+          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+            When you're an adult, no one's monitoring your screen time. 
             You need accountability that works when family can't help anymore.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gray-900/50 border-gray-700">
-              <CardContent className="p-8">
-                <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Young Adults</h3>
-                <p className="text-gray-400">University students and young professionals who need to build healthy digital habits independently</p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:400ms]">
+              <CardContent className="p-12">
+                <Users className="w-16 h-16 text-blue-400 mx-auto mb-8" />
+                <h3 className="text-2xl font-bold mb-4">Young Adults</h3>
+                <p className="text-gray-300 text-lg">University students and young professionals building healthy digital habits</p>
               </CardContent>
             </Card>
-            <Card className="bg-gray-900/50 border-gray-700">
-              <CardContent className="p-8">
-                <Target className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Professionals</h3>
-                <p className="text-gray-400">Adults who recognize their phone usage impacts their productivity and well-being</p>
+            
+            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:600ms]">
+              <CardContent className="p-12">
+                <Target className="w-16 h-16 text-green-400 mx-auto mb-8" />
+                <h3 className="text-2xl font-bold mb-4">Professionals</h3>
+                <p className="text-gray-300 text-lg">Adults who recognize phone usage impacts productivity and well-being</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Friend Challenges Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+      {/* Friend Challenges */}
+      <section className="py-32 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 opacity-0 animate-fade-in">
             Challenge Your Friends
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Turn reducing screen time into a competitive game. Create challenges with friends, 
-            and whoever breaks their limits first pays everyone else. Social accountability meets financial consequences.
+          
+          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+            Turn reducing screen time into a competitive game. 
+            Whoever breaks their limits first pays everyone else.
           </p>
           
-          <Card className="bg-gradient-to-r from-blue-900/20 to-green-900/20 border-gray-700 max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <div className="text-4xl mb-4">🏆</div>
-              <h3 className="text-2xl font-semibold text-white mb-4">Group Challenges</h3>
-              <p className="text-gray-300 mb-6">
-                Create weekly or monthly challenges with friends. The first person to break their limits 
-                pays £0.99 to each participant. Turn peer pressure into positive change.
+          <Card className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-purple-500/30 opacity-0 animate-fade-in [animation-delay:400ms]">
+            <CardContent className="p-16">
+              <div className="text-8xl mb-8">🏆</div>
+              <h3 className="text-3xl font-bold mb-6">Group Challenges</h3>
+              <p className="text-xl text-gray-300 mb-8">
+                Create challenges with friends. First to break pays £0.99 to each participant.
+                Turn peer pressure into positive change.
               </p>
-              <Badge className="bg-green-600/20 text-green-300 border-green-600/30">
+              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-lg px-6 py-2">
                 Coming Soon
               </Badge>
             </CardContent>
@@ -330,79 +275,116 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-900/20 to-gray-800/20">
+      <section className="py-32 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 opacity-0 animate-fade-in">
             What Early Users Say
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-gray-900/50 border-gray-700">
-                <CardContent className="p-8">
-                  <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">{testimonial.name}</p>
-                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                    </div>
+          <div className="grid md:grid-cols-3 gap-12">
+            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:200ms]">
+              <CardContent className="p-10">
+                <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
+                  "Finally, a screen time app that actually works! The financial consequence made me think twice about mindless scrolling."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    SC
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <div>
+                    <p className="font-bold">Sarah Chen</p>
+                    <p className="text-gray-400">Marketing Manager</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:400ms]">
+              <CardContent className="p-10">
+                <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
+                  "As someone who builds apps, I know how addictive they can be. ScreenFine's approach is genius - it hits where it hurts most."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                    MJ
+                  </div>
+                  <div>
+                    <p className="font-bold">Marcus Johnson</p>
+                    <p className="text-gray-400">Software Developer</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/5 border-white/10 opacity-0 animate-fade-in [animation-delay:600ms]">
+              <CardContent className="p-10">
+                <p className="text-lg text-gray-300 mb-8 italic leading-relaxed">
+                  "The friend challenges feature is incredible. We turned reducing screen time into a competitive game!"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                    ER
+                  </div>
+                  <div>
+                    <p className="font-bold">Emma Rodriguez</p>
+                    <p className="text-gray-400">University Student</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Waitlist Section */}
-      <section className="py-20 px-4">
+      {/* Waitlist */}
+      <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 opacity-0 animate-fade-in">
             Join the Waitlist
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
-            Be among the first to experience the screen time app that actually works. 
-            Get early access and special launch pricing.
+          
+          <p className="text-2xl text-gray-300 mb-16 opacity-0 animate-fade-in [animation-delay:200ms]">
+            Be among the first to experience the screen time app that actually works.
           </p>
           
-          <form onSubmit={handleWaitlistSignup} className="max-w-md mx-auto">
+          <form onSubmit={handleWaitlistSignup} className="max-w-md mx-auto opacity-0 animate-fade-in [animation-delay:400ms]">
             <div className="flex gap-4">
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-gray-900 border-gray-700 text-white placeholder-gray-400"
+                className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 h-14 text-lg rounded-full px-6"
                 required
               />
-              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-8">
+              <Button 
+                type="submit" 
+                className="bg-white text-black hover:bg-gray-200 h-14 px-8 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+              >
                 Join Waitlist
               </Button>
             </div>
           </form>
           
-          <p className="text-gray-400 text-sm mt-4">
+          <p className="text-gray-400 mt-8 opacity-0 animate-fade-in [animation-delay:600ms]">
             No spam. We'll only email you when ScreenFine launches.
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-gray-800">
+      <footer className="py-16 px-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">ScreenFine</h3>
-          <p className="text-gray-400 mb-6">
+          <h3 className="text-3xl font-bold mb-4">ScreenFine</h3>
+          <p className="text-gray-400 mb-8 text-lg">
             The screen time app that charges you when you break your limits.
           </p>
-          <div className="flex justify-center gap-8 text-gray-400">
+          <div className="flex justify-center gap-12 text-gray-400 text-lg">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
             <a href="#" className="hover:text-white transition-colors">Contact</a>
           </div>
-          <p className="text-gray-500 text-sm mt-8">
+          <p className="text-gray-500 mt-12">
             © 2024 ScreenFine. All rights reserved.
           </p>
         </div>
